@@ -20,7 +20,7 @@ class CompilerController {
     @PostMapping("/compile")
     fun spotifyLogin(@RequestBody code: Map<String, String>): String {
         val codeStr = code["code"] ?: error("Code was not found!")
-        logger.info("Starting to compile code. $codeStr")
+        logger.info("Starting to compile code.")
         val tempFile = File("Temp.java")
         tempFile.writeText(codeStr, Charsets.UTF_8)
         Runtime.getRuntime().exec("javac Temp.java")
@@ -28,7 +28,6 @@ class CompilerController {
         val reader = BufferedReader(InputStreamReader(process.inputStream))
         val strBuilder = StringBuilder()
         reader.readLines().forEach { strBuilder.append(it).append('\n') }
-        process.waitFor()
         return strBuilder.toString()
     }
 }
