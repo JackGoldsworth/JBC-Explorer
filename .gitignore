@@ -1,0 +1,14 @@
+.gradle
+build
+
+out
+*.ipr
+*.iws
+*.iml
+.idea/
+
+*.class
+
+credentials.json
+
+auth.json
