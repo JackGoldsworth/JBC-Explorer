@@ -25,6 +25,7 @@ class CompilerController {
         tempFile.writeText(codeStr, Charsets.UTF_8)
         Runtime.getRuntime().exec("javac Temp.java")
         val process = Runtime.getRuntime().exec("javap -v temp")
+        process.waitFor()
         val reader = BufferedReader(InputStreamReader(process.inputStream))
         val strBuilder = StringBuilder()
         reader.readLines().forEach { strBuilder.append(it).append('\n') }

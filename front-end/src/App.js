@@ -21,13 +21,14 @@ export class App extends React.Component {
                     <div>
                     <textarea id="code" rows="35" style={{height: 90 + '%', width: 50 + '%'}} defaultValue={
                         "public class Temp {\n" +
-                            "   public static void main(String[] args) {\n      System.out.println(\"Hello, World\"); \n    } \n"
+                        "   public static void main(String[] args) {\n      System.out.println(\"Hello, World\"); \n    } \n"
                         + "}"
                     }/>
                         <textarea id="result" rows="35" style={{height: 90 + '%', width: 50 + '%'}}/>
                     </div>
                     <div>
-                        <button onClick={() => this.pushCode()} class={"button is-success"} style={{marginLeft: 0.1 + 'vw'}}>
+                        <button onClick={() => this.pushCode()} class={"button is-success"}
+                                style={{marginLeft: 0.1 + 'vw'}}>
                             Compile
                         </button>
                     </div>
